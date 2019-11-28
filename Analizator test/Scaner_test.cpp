@@ -3,6 +3,7 @@
 #include "../analizator/Token.h"
 
 
+
 TEST(ScannerTests, EmptyFile) {
 	std::istringstream iss("");
 	Scanner scanner(iss);
@@ -12,7 +13,7 @@ TEST(ScannerTests, EmptyFile) {
 }
 
 TEST(ScannerTests, InvalidCharacter) {
-	std::istringstream iss("кот");
+	std::istringstream iss("дерево");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
@@ -20,12 +21,12 @@ TEST(ScannerTests, InvalidCharacter) {
 }
 
 TEST(ScannerTests, DigitTest) {
-	std::istringstream iss("5");
+	std::istringstream iss("7");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(5, token.value());
+	EXPECT_EQ(7, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
@@ -33,24 +34,24 @@ TEST(ScannerTests, DigitTest) {
 
 
 TEST(ScannerTests, NumberTest) {
-	std::istringstream iss("42");
+	std::istringstream iss("47");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(42, token.value());
+	EXPECT_EQ(47, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
 
 TEST(ScannerTests, DigitCommaTest) {
-	std::istringstream iss("5;");
+	std::istringstream iss("7;");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(5, token.value());
+	EXPECT_EQ(7, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::semicolon, token.type());
@@ -60,26 +61,26 @@ TEST(ScannerTests, DigitCommaTest) {
 }
 
 TEST(ScannerTests, TwoNumbersTest) {
-	std::istringstream iss("5;42");
+	std::istringstream iss("7;47");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(5, token.value());
+	EXPECT_EQ(7, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::semicolon, token.type());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(42, token.value());
+	EXPECT_EQ(47, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
 
 TEST(ScannerTests, InvalidCharacterTest) {
-	std::istringstream iss("'ab'");
+	std::istringstream iss("'aa'");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
@@ -95,11 +96,11 @@ TEST(ScannerTests, EmptyCharacterTest) {
 }
 
 TEST(ScannerTests, KeywordTest) {
-	std::istringstream iss("return;");
+	std::istringstream iss("switch;");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
-	EXPECT_EQ(LexemType::kwreturn, token.type());
+	EXPECT_EQ(LexemType::kwswitch, token.type());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::semicolon, token.type());
@@ -109,27 +110,27 @@ TEST(ScannerTests, KeywordTest) {
 }
 
 TEST(ScannerTests, IdTest) {
-	std::istringstream iss("myVar1");
+	std::istringstream iss("myVar");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::id, token.type());
-	EXPECT_EQ("myVar1", token.str());
+	EXPECT_EQ("myVar", token.str());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
 
 TEST(ScannerTests, KeywordAndIdTest) {
-	std::istringstream iss("return myVar1;");
+	std::istringstream iss("switch myVar;");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
-	EXPECT_EQ(LexemType::kwreturn, token.type());
+	EXPECT_EQ(LexemType::kwswitch, token.type());
 	scanner >> token;
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::id, token.type());
-	EXPECT_EQ("myVar1", token.str());
+	EXPECT_EQ("myVar", token.str());
 	scanner >> token;
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::semicolon, token.type());
@@ -151,7 +152,7 @@ TEST(ScannerTests, StringTest) {
 }
 
 TEST(ScannerTests, StringUnexpectedEOFTest) {
-	std::istringstream iss("\"Oh no, stream end");
+	std::istringstream iss("\"stream is end");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
@@ -170,36 +171,36 @@ TEST(ScannerTests, MinusCharacterTest) {
 }
 
 TEST(ScannerTests, MinusNumCharacterTest) {
-	std::istringstream iss("-4");
+	std::istringstream iss("-7");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(-4, token.value());
+	EXPECT_EQ(-7, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
 
 TEST(ScannerTests, MinusNum2CharacterTest) {
-	std::istringstream iss("-10");
+	std::istringstream iss("-15");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(-10, token.value());
+	EXPECT_EQ(-15, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
 
 TEST(ScannerTests, MinusNum3CharacterTest) {
-	std::istringstream iss("-12");
+	std::istringstream iss("-13");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(-12, token.value());
+	EXPECT_EQ(-13, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
@@ -223,34 +224,13 @@ TEST(ScannerTests, MinusTwoNumCharacterTest) {
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
-// ???
-//	TEST(ScannerTests, MinusTwoNumCharacterTest) {
-//		std::istringstream iss("12-19");
-//		Scanner scanner(iss);
-//		Token token = scanner.getNextToken();
-//		token.print(std::cerr);
-//		ASSERT_EQ(LexemType::num, token.type());
-//		ASSERT_EQ(12, token.value());
-//		token = scanner.getNextToken();
-//		token.print(std::cerr);
-//		ASSERT_EQ(LexemType::opminus, token.type());
-//		token = scanner.getNextToken();
-//		token.print(std::cerr);
-//		ASSERT_EQ(LexemType::num, token.type());
-//		ASSERT_EQ(19, token.value());
-//		token = scanner.getNextToken();
-//		token.print(std::cerr);
-//		ASSERT_EQ(LexemType::eof, token.type());
-//	}
-// ???
-
 TEST(ScannerTests, MinusTwoNum2CharacterTest) {
-	std::istringstream iss("12 + (-19)");
+	std::istringstream iss("13 + (-15)");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(12, token.value());
+	EXPECT_EQ(13, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::opplus, token.type());
@@ -260,7 +240,7 @@ TEST(ScannerTests, MinusTwoNum2CharacterTest) {
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(-19, token.value());
+	EXPECT_EQ(-15, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::rpar, token.type());
@@ -325,7 +305,7 @@ TEST(ScannerTests, IncCharacterTest) {
 }
 
 TEST(ScannerTests, NumIncCharacterTest) {
-	std::istringstream iss("5++");
+	std::istringstream iss("7++");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
@@ -388,7 +368,7 @@ TEST(ScannerTests, IfCharacterTest) {
 }
 
 TEST(ScannerTests, IfSignCharacterTest) {
-	std::istringstream iss("if (a==10);");
+	std::istringstream iss("if (c==13);");
 	Scanner scanner(iss);
 	Token token = scanner.getNextToken();
 	token.print(std::cerr);
@@ -399,14 +379,14 @@ TEST(ScannerTests, IfSignCharacterTest) {
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::id, token.type());
-	EXPECT_EQ("a", token.str());
+	EXPECT_EQ("c", token.str());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::opeq, token.type());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::num, token.type());
-	EXPECT_EQ(10, token.value());
+	EXPECT_EQ(13, token.value());
 	token = scanner.getNextToken();
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::rpar, token.type());
@@ -428,6 +408,7 @@ TEST(ScannerTests, ForCharacterTest) {
 	token.print(std::cerr);
 	EXPECT_EQ(LexemType::eof, token.type());
 }
+
 
 TEST(ScannerTests, ForSignCharacterTest) {
 	std::istringstream iss("for (i=1;i<7;i++)");

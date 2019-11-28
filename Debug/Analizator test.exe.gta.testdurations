@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Executable>C:\Users\adild\Desktop\Новая папка\Debug\Analizator test.exe</Executable>
+  <Executable>C:\Users\Пользователь\Source\Repos\adildikov\Compiler1\Debug\Analizator test.exe</Executable>
   <TestDurations>
     <TestDuration Test="Lexem_type.To_String" Duration="1" />
     <TestDuration Test="TokenTest.ConstructorEmpty" Duration="1" />
