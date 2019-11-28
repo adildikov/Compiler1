@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Executable>E:\Институт\2 КУРС\C++\anakiz\Analizator\Debug\Tests Analizator.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="Lexem_type.To_String" Duration="1" />
+    <TestDuration Test="TokenTest.ConstructorEmpty" Duration="1" />
+    <TestDuration Test="TokenTest.ConstructorString" Duration="4" />
+  </TestDurations>
+</GtaTestDurations>

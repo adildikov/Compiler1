@@ -1,0 +1,4 @@
+﻿  pch.cpp
+Token.obj : error LNK2019: ссылка на неразрешенный внешний символ "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl lexemToString(enum LexemType)" (?lexemToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LexemType@@@Z) в функции "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Token::toString(void)" (?toString@Token@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+LexemToString_test.obj : error LNK2001: неразрешенный внешний символ ""class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl lexemToString(enum LexemType)" (?lexemToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LexemType@@@Z)"
+E:\Институт\2 КУРС\C++\anakiz\Analizator\Debug\Tests Analizator.exe : fatal error LNK1120: неразрешенных внешних элементов: 1

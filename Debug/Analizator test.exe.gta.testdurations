@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Executable>C:\Users\adild\Desktop\Новая папка\Debug\Analizator test.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="Lexem_type.To_String" Duration="1" />
+    <TestDuration Test="TokenTest.ConstructorEmpty" Duration="1" />
+    <TestDuration Test="TokenTest.ConstructorString" Duration="1" />
+    <TestDuration Test="TestCaseName.TestName" Duration="1" />
+    <TestDuration Test="TokenTest.ConstructorCharacter" Duration="1" />
+    <TestDuration Test="TokenTest.ConstructorInteger" Duration="1" />
+    <TestDuration Test="Token_Test.ConstructorEmpty" Duration="1" />
+    <TestDuration Test="Token_Test.ConstructorString" Duration="1" />
+    <TestDuration Test="Token_Test.ConstructorCharacter" Duration="1" />
+    <TestDuration Test="Token_Test.ConstructorInteger" Duration="1" />
+    <TestDuration Test="ScannerTests.EmptyFile" Duration="1" />
+    <TestDuration Test="ScannerTests.InvalidCharacter" Duration="1" />
+    <TestDuration Test="ScannerTests.DigitTest" Duration="1" />
+    <TestDuration Test="ScannerTests.NumberTest" Duration="1" />
+    <TestDuration Test="ScannerTests.DigitCommaTest" Duration="1" />
+    <TestDuration Test="ScannerTests.TwoNumbersTest" Duration="1" />
+    <TestDuration Test="ScannerTests.CharacterTest" Duration="2" />
+    <TestDuration Test="ScannerTests.InvalidCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.EmptyCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.TwoCharactersTest" Duration="1" />
+    <TestDuration Test="ScannerTests.KeywordTest" Duration="1" />
+    <TestDuration Test="ScannerTests.IdTest" Duration="1" />
+    <TestDuration Test="ScannerTests.KeywordAndIdTest" Duration="1" />
+    <TestDuration Test="ScannerTests.StringTest" Duration="1" />
+    <TestDuration Test="ScannerTests.StringUnexpectedEOFTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MinusCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MinusNumCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MinusNum2CharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MinusNum3CharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MinusTwoNumCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MinusTwoNum2CharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.NotCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.NeCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.LtCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.LeCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.IncCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.NumIncCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.OrCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.InvalidOrCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.AndCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.InvalidAndCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.IfCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.IfSignCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.ForCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.ForSignCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.SwitchCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.SwitchSignCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.OutCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.OutNumCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.OutACharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.OutHWCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.InCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.WhileCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.WhileSignCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.CaseCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.ElseCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.BracketCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.ColonCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.CommaCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.ParCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.BraceCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.IntCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MoreOneIntCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.CharCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.MoreOneCharCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.SignCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.CharsignCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.IntMasCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.CharMasCharacterTest" Duration="1" />
+    <TestDuration Test="ScannerTests.GtPlusNotStatementTest" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>

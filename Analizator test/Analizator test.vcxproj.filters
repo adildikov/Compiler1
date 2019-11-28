@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Tests Analizator\LexemToString_test.cpp">
+      <Filter>Тесты</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Analizator\Lexemtostring.cpp">
+      <Filter>Файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Analizator\Token.cpp">
+      <Filter>Файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tests Analizator\token_test.cpp">
+      <Filter>Тесты</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Scaner_test.cpp">
+      <Filter>Тесты</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Analizator\Scaner.cpp">
+      <Filter>Файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{17a5345b-2647-40f3-a633-e346d62e721a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Тесты">
+      <UniqueIdentifier>{bd3871d2-b9f2-4d95-b8f6-29944e9db289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы">
+      <UniqueIdentifier>{0189dd21-3e50-4e62-9e53-06b5cdfa20c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
